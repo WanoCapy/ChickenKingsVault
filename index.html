@@ -35,6 +35,31 @@
             justify-items: center;
             margin-top: 30px;
         }
+        .search-container {
+            margin-top: 18px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .search-input {
+            width: 720px;
+            max-width: calc(100% - 40px);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .search-input::placeholder { color: rgba(255,255,255,0.55); }
+        .no-results {
+            margin-top: 18px;
+            color: #ff6b6b;
+            font-weight: bold;
+            display: none;
+        }
         .game-link {
             display: flex;
             flex-direction: column;
@@ -65,6 +90,9 @@
         <h1>🐔 Chicken King's Vault 🐔</h1>
         <p>by @wanocapy</p>
         <p>All games/ports are from GN-Math, TruffledUBG and Ultimate Game Stash!</p>
+            <div class="search-container">
+                <input id="search-input" class="search-input" type="search" placeholder="Search games..." aria-label="Search games">
+            </div>
         <div class="game-list">
             <a class="game-link" href="hollowknight.html">
                 <img src="hollowknight.png" alt="Hollow Knight Cover">
@@ -335,6 +363,37 @@
                 <div>Plants VS Zombies</div>
             </a>
         </div>
+        <div id="no-results" class="no-results">No games match your search.</div>
     </div>
+    <script>
+        (function(){
+            const input = document.getElementById('search-input');
+            const gameList = document.querySelectorAll('.game-link');
+            const noResults = document.getElementById('no-results');
+
+            function normalize(text){
+                return text.trim().toLowerCase();
+            }
+
+            function filterGames(){
+                const q = normalize(input.value || '');
+                let visible = 0;
+                gameList.forEach(a => {
+                    const title = normalize(a.textContent || a.innerText || '');
+                    if(q === '' || title.indexOf(q) !== -1){
+                        a.style.display = '';
+                        visible++;
+                    } else {
+                        a.style.display = 'none';
+                    }
+                });
+                noResults.style.display = visible === 0 ? 'block' : 'none';
+            }
+
+            input.addEventListener('input', filterGames);
+            // optional: allow pressing Escape to clear
+            input.addEventListener('keydown', (e) => { if(e.key === 'Escape'){ input.value = ''; filterGames(); } });
+        })();
+    </script>
 </body>
 </html>
