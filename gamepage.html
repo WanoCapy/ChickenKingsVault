@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🐔 Chicken Kings Game Vault 🐔</title>
+    <style>
+        .topbar {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px 0;
+        }
+        .topbar .nav {
+            display: flex;
+            gap: 10px;
+        }
+        .topbar .nav a {
+            background: rgba(255,255,255,0.04);
+            color: #ffffff;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .topbar .nav a:hover {
+            background: rgba(255,255,255,0.06);
+        }
+        .discord-link {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .discord-link a {
+            color: #7289DA;
+            text-decoration: none;
+        }
+        .discord-link a:hover {
+            text-decoration: underline;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #222;
+            color: #fff;
+        }
+        .center-content {
+            text-align: center;
+        }
+        .game-list {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 40px;
+            justify-items: center;
+            margin-top: 30px;
+        }
+        .search-container {
+            margin-top: 18px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .search-input {
+            width: 720px;
+            max-width: calc(100% - 40px);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .search-input::placeholder { color: rgba(255,255,255,0.55); }
+        .no-results {
+            margin-top: 18px;
+            color: #ff6b6b;
+            font-weight: bold;
+            display: none;
+        }
+        .game-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            width: 200px;
+        }
+        .game-link img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+        .game-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐔 Chicken Kings Vault 🐔</h1>
+    <header class="topbar">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="gamepage.html">Games</a>
+            <a href="https://discord.gg/MYpMKuf3uQ" _target="blank">Discord</a>
+        </nav>
+    </header>
+       <div class="center-content">
+        <p>All games/ports are from GN-Math, TruffledUBG and Ultimate Game Stash!</p>
+            <div class="search-container">
+                <input id="search-input" class="search-input" type="search" placeholder="Search games..." aria-label="Search games">
+            </div>
+        <div class="game-list">
+            <a class="game-link" href="hollowknight.html">
+                <img src="hollowknight.png" alt="Hollow Knight Cover">
+                <div>Hollow Knight</div>
+            </a>
+            <a class="game-link" href="buckshotroulette.html">
+                <img src="buckshotroulette.jpg" alt="Buckshot Roulette Cover">
+                <div>Buckshot Roulette</div>
+            </a>
+            <a class="game-link" href="doom64.html">
+                <img src="doom64.jpg" alt="Doom 64 Cover">
+                <div>Doom 64</div>
+            </a>
+            <a class="game-link" href="ultrakillgame.html">
+                <img src="ultrakill.jpg" alt="Ultrakill Cover">
+                <div>Ultrakill</div>
+            </a>
+            <a class="game-link" href="omorigame.html">
+                <img src="omori.png" alt="Omori Cover">
+                <div>Omori</div>
+            </a>
+            <a class="game-link" href="repo.html">
+                <img src="repo.webp" alt="Repo Cover">
+                <div>R.E.P.O</div>
+            </a>
+            <a class="game-link" href="minecraft1.12.2.html">
+                <img src="minecraft.webp" alt="Minecraft Cover">
+                <div>Minecraft 1.12.2</div>
+            </a>
+            <a class="game-link" href="Basketrandom.html">
+                <img src="basketrandom.png" alt="Basket Random Cover">
+                <div>Basket Random</div>
+            </a>
+             <a class="game-link" href="Bendyandtheinkmachine.html">
+                <img src="bendy.jfif" alt="Bendy and the Ink Machine Cover">
+                <div>Bendy and the Ink Machine</div>
+            </a>
+             <a class="game-link" href="classof'09.html">
+                <img src="classof09.jfif" alt="Class of '09 Cover">
+                <div>Class of '09</div>
+            </a>
+              <a class="game-link" href="hotlinemiami.html">
+                <img src="hotlinemiami.jfif" alt="Hotline Miami Cover">
+                <div>Hotline Miami</div>
+            </a>
+              <a class="game-link" href="cupheadgame.html">
+                <img src="cuphead.png" alt="Cuphead Cover">
+                <div>Cuphead</div>
+            </a>
+              <a class="game-link" href="halflife.html">
+                <img src="halflife.png" alt="Half-life Cover">
+                <div>Half-life</div>
+            </a>
+                <a class="game-link" href="peopleplayground.html">
+                <img src="peopleplayground.jpg" alt="People Playground Cover">
+                <div>People Playground</div>
+            </a>
+                <a class="game-link" href="stickmanhook.html">
+                <img src="stickmanhook.jfif" alt="Stickman Hook Cover">
+                <div>Stickman Hook</div>
+            </a>
+                <a class="game-link" href="crazycars.html">
+                <img src="crazycars.png" alt="Crazy Cars Cover">
+                <div>Crazy Cars</div>
+            </a>
+                <a class="game-link" href="cuttherope.html">
+                <img src="cuttherope.png" alt="Cut the Rope Cover">
+                <div>Cut the Rope</div>
+            </a>
+                <a class="game-link" href="drifthunters.html">
+                <img src="drifthunters.png" alt="Drift Hunters Cover">
+                <div>Drift Hunters</div>
+            </a>
+                            <a class="game-link" href="blumgirocket.html">
+                <img src="blumgirocket.png" alt="Blumgi Rocket Cover">
+                <div>Blumgi Rocket</div>
+            </a>
+                            <a class="game-link" href="candycrush.html">
+                <img src="candycrush.png" alt="Candy Crush Cover">
+                <div>Candy Crush</div>
+            </a>
+                            <a class="game-link" href="pokemonemerald.html">
+                <img src="pokemonemerald.jpg" alt="Pokemon Emerald Cover">
+                <div>Pokemon Emerald</div>
+            </a>
+                            <a class="game-link" href="badparenting1.html">
+                <img src="badparenting.jpg" alt="Bad Parenting 1 Cover">
+                <div>Bad Parenting 1</div>
+            </a>
+                            <a class="game-link" href="baldisbasicsplus.html">
+                <img src="baldi'sbasicsplus.webp" alt="Baldi's Basics Plus Cover">
+                <div>Baldi's Basics Plus</div>
+            </a>
+                            <a class="game-link" href="bindingofisaac.html">
+                <img src="bindingofisaac.jpg" alt="Binding of Isaac: Wrath of the Lamb Cover">
+                <div>Binding of Isaac: Wrath of the Lamb</div>
+            </a>
+                            <a class="game-link" href="karlsongame.html">
+                <img src="karlson.jpg" alt="Karlson Cover">
+                <div>Karlson</div>
+            </a>
+                            <a class="game-link" href="kindergarten1.html">
+                <img src="kindergarten1.jpg" alt="Kindergarten Cover">
+                <div>Kindergarten</div>
+            </a>
+                            <a class="game-link" href="kindergarten2.html">
+                <img src="kindergarten2.jpg" alt="Kindergarten 2 Cover">
+                <div>Kindergarten 2</div>
+            </a>
+                            <a class="game-link" href="pizzatower.html">
+                <img src="pizzatower.png" alt="Pizza Tower Cover">
+                <div>Pizza Tower</div>
+            </a>
+                            <a class="game-link" href="quake3arena.html">
+                <img src="quake3arena.jpg" alt="Quake III Arena Cover">
+                <div>Quake III Arena</div>
+            </a>
+                            <a class="game-link" href="undertaleyellow.html">
+                <img src="undertaleyellow.png" alt="Undertale Yellow Cover">
+                <div>Undertale Yellow</div>
+            </a>
+                            <a class="game-link" href="ddlc.html">
+                <img src="ddlc.webp" alt="Doki Doki Literature Club Cover">
+                <div>Doki Doki Literature Club</div>
+            </a>
+                            <a class="game-link" href="blumgiracers.html">
+                <img src="blumgiracers.avif" alt="Blumgi Racers Cover">
+                <div>Blumgi Racers</div>
+            </a>
+                            <a class="game-link" href="revelationspersona.html">
+                <img src="persona1.png" alt="Persona Cover">
+                <div>Revelations: Persona</div>
+            </a>
+                            <a class="game-link" href="persona2.html">
+                <img src="persona2.jpg" alt="Persona 2 Cover">
+                <div>Persona 2</div>
+            </a>
+                            <a class="game-link" href="pokemonblack.html">
+                <img src="pokemonblack.webp" alt="Pokemon Black Cover">
+                <div>Pokemon Black</div>
+            </a>
+                            <a class="game-link" href="pokemonblue.html">
+                <img src="pokemonblue.jpg" alt="Pokemon Blue Cover">
+                <div>Pokemon Blue</div>
+            </a>
+                            <a class="game-link" href="pokemoncrystal.html">
+                <img src="pokemoncrystal.jpg" alt="Pokemon Crystal Cover">
+                <div>Pokemon Crystal</div>
+            </a>
+                            <a class="game-link" href="pokemondiamond.html">
+                <img src="pokemondiamond.png" alt="Pokemon Diamond Cover">
+                <div>Pokemon Diamond</div>
+            </a>
+                            <a class="game-link" href="pokemongold.html">
+                <img src="pokemongold.webp" alt="Pokemon Gold Cover">
+                <div>Pokemon Gold</div>
+            </a>
+                            <a class="game-link" href="pokemonpearl.html">
+                <img src="pokemonpearl.jpg" alt="Pokemon Pearl Cover">
+                <div>Pokemon Pearl</div>
+            </a>
+                            <a class="game-link" href="pokemonplatinum.html">
+                <img src="pokemonplatinum.png" alt="Pokemon Platinum Cover">
+                <div>Pokemon Platinum</div>
+            </a>
+                            <a class="game-link" href="pokemonred.html">
+                <img src="pokemonred.jpg" alt="Pokemon Red Cover">
+                <div>Pokemon Red</div>
+            </a>
+                            <a class="game-link" href="pokemonruby.html">
+                <img src="pokemonruby.webp" alt="Pokemon Ruby Cover">
+                <div>Pokemon Ruby</div>
+            </a>
+                            <a class="game-link" href="pokemonsapphire.html">
+                <img src="pokemonsapphire.jpg" alt="Pokemon Sapphire Cover">
+                <div>Pokemon Sapphire</div>
+            </a>
+                            <a class="game-link" href="pokemonsilver.html">
+                <img src="pokemonsilver.jpg" alt="Pokemon Silver Cover">
+                <div>Pokemon Silver</div>
+            </a>
+                            <a class="game-link" href="pokemonwhite.html">
+                <img src="pokemonwhite.jpg" alt="Pokemon White Cover">
+                <div>Pokemon White</div>
+            </a>
+                            <a class="game-link" href="pokemonyellow.html">
+                <img src="pokemonyellow.jpg" alt="Pokemon Yellow Cover">
+                <div>Pokemon Yellow</div>
+            </a>
+                            <a class="game-link" href="celestepico.html">
+                <img src="celestepico.png" alt="Celeste Pico-8 Cover">
+                <div>Celeste Pico-8</div>
+            </a>
+                            <a class="game-link" href="crazycattle3d.html">
+                <img src="crazycattle3d.jpg" alt="Crazy Cattle 3D Cover">
+                <div>Crazy Cattle 3D</div>
+            </a>
+                            <a class="game-link" href="drivemad.html">
+                <img src="drivemad.png" alt="Drive Mad Cover">
+                <div>Drive Mad</div>
+            </a>
+                            <a class="game-link" href="tonyhawksproskater4.html">
+                <img src="tonyhawksproskater4.jpg" alt="Tony Hawk's Pro Skater 4 Cover">
+                <div>Tony Hawk's Pro Skater 4</div>
+            </a>
+                            <a class="game-link" href="supersmashbros.html">
+                <img src="supersmashbros.webp" alt="Super Smash Bros Cover">
+                <div>Super Smash Bros</div>
+            </a>
+                            <a class="game-link" href="gta1.html">
+                <img src="gta1.jpg" alt="Grand Theft Auto Cover">
+                <div>Grand Theft Auto</div>
+            </a>
+                            <a class="game-link" href="tomclancysrainbowsix.html">
+                <img src="tomclancysrainbowsix.jpg" alt="Tom Clancy's Rainbow Six Cover">
+                <div>Tom Clancy's Rainbow Six</div>
+            </a>
+                            <a class="game-link" href="blockblast.html">
+                <img src="blockblast.jpg" alt="Block Blast Cover">
+                <div>Block Blast</div>
+            </a>
+                            <a class="game-link" href="1v1lol.html">
+                <img src="1v1.lol.webp" alt="1v1.lol Cover">
+                <div>1v1.lol</div>
+            </a>
+                            <a class="game-link" href="2048game.html">
+                <img src="2048.png" alt="2048 Cover">
+                <div>2048</div>
+            </a>
+                            <a class="game-link" href="suikagame.html">
+                <img src="suikagame.webp" alt="Suika Game Cover">
+                <div>Suika Game</div>
+            </a>
+                            <a class="game-link" href="supremeduelist.html">
+                <img src="supremeduelist.webp" alt="Supreme Duelist Cover">
+                <div>Supreme Duelist</div>
+            </a>
+                            <a class="game-link" href="tanukisunset.html">
+                <img src="tanukisunset.jpg" alt="Tanuki Sunset Cover">
+                <div>Tanuki Sunset</div>
+            </a>
+                            <a class="game-link" href="polytrack.html">
+                <img src="polytrack.png" alt="Polytrack Cover">
+                <div>Polytrack</div>
+            </a>
+                            <a class="game-link" href="badpiggies.html">
+                <img src="badpiggies.webp" alt="Bad Piggies Cover">
+                <div>Bad Piggies</div>
+            </a>
+                            <a class="game-link" href="infinitecraft.html">
+                <img src="infinitecraft.jpg" alt="Infinite Craft Cover">
+                <div>Infinite Craft</div>
+            </a>
+                            <a class="game-link" href="jetpackjoyride.html">
+                <img src="jetpackjoyride.jpg" alt="Jetpack Joyride Cover">
+                <div>Jetpack Joyride</div>
+            </a>
+                            <a class="game-link" href="leveldevil.html">
+                <img src="leveldevil.jpg" alt="Level Devil Cover">
+                <div>Level Devil</div>
+            </a>
+                            <a class="game-link" href="melonplayground.html">
+                <img src="melonplayground.png" alt="Melon Playground Cover">
+                <div>Melon Playground</div>
+            </a>
+                            <a class="game-link" href="pvz.html">
+                <img src="pvz.jpg" alt="Plants VS Zombies Cover">
+                <div>Plants VS Zombies</div>
+            </a>
+                            <a class="game-link" href="solitairegame.html">
+                <img src="solitaire.jpg" alt="Solitaire Cover">
+                <div>Solitaire</div>
+            </a>
+                            <a class="game-link" href="grannygame.html">
+                <img src="granny.png" alt="Granny Cover">
+                <div>Granny</div>
+            </a>
+                            <a class="game-link" href="fruitninja.html">
+                <img src="fruitninja.webp" alt="Fruit Ninja Cover">
+                <div>Fruit Ninja</div>
+            </a>
+                            <a class="game-link" href="fnaf.html">
+                <img src="fnaf.jpg" alt="FNAF Cover">
+                <div>FNAF</div>
+            </a>
+                            <a class="game-link" href="fnaf2.html">
+                <img src="fnaf2.webp" alt="FNAF 2 Cover">
+                <div>FNAF 2</div>
+            </a>
+                            <a class="game-link" href="fnaf3.html">
+                <img src="fnaf3.jpg" alt="FNAF 3 Cover">
+                <div>FNAF 3</div>
+            </a>
+                            <a class="game-link" href="fnaf4.html">
+                <img src="fnaf4.webp" alt="FNAF 4 Cover">
+                <div>FNAF 4</div>
+            </a>
+                            <a class="game-link" href="cookieclicker.html">
+                <img src="cookieclicker.png" alt="Cookie Clicker Cover">
+                <div>Cookie Clicker</div>
+            </a>
+                            <a class="game-link" href="chessgame.html">
+                <img src="chess.jpg" alt="Chess Cover">
+                <div>Chess</div>
+            </a>
+                            <a class="game-link" href="btd1.html">
+                <img src="btd1.jpg" alt="BTD1 Cover">
+                <div>BTD1</div>
+            </a>
+                            <a class="game-link" href="btd2.html">
+                <img src="btd2.jpg" alt="BTD2 Cover">
+                <div>BTD2</div>
+            </a>
+                            <a class="game-link" href="btd3.html">
+                <img src="btd3.jpg" alt="BTD3 Cover">
+                <div>BTD3</div>
+            </a>
+                            <a class="game-link" href="btd4.html">
+                <img src="btd4.jpg" alt="BTD4 Cover">
+                <div>BTD4</div>
+            </a>
+                            <a class="game-link" href="btd5.html">
+                <img src="btd5.jpg" alt="BTD5 Cover">
+                <div>BTD5</div>
+            </a>
+                            <a class="game-link" href="survivalrace.html">
+                <img src="survivalrace.jpg" alt="Survival Race Cover">
+                <div>Survival Race</div>
+            </a>
+                            <a class="game-link" href="yanderesimulator.html">
+                <img src="yanderesimulator.jpg" alt="Yandere Simulator Cover">
+                <div>Yandere Simulator</div>
+            </a>
+                            <a class="game-link" href="wordlegame.html">
+                <img src="wordle.png" alt="Wordle Cover">
+                <div>Wordle</div>
+            </a>
+                            <a class="game-link" href="ocarinaoftime.html">
+                <img src="ocarinaoftime.jpg" alt="Legends of Zelda:Ocarina of Time Cover">
+                <div>Legends of Zelda: Ocarina of Time</div>
+            </a>
+                            <a class="game-link" href="amongus.html">
+                <img src="amongus.png" alt="Among Us Cover">
+                <div>Among Us</div>
+            </a>
+                            <a class="game-link" href="territorialio.html">
+                <img src="territorialio.webp" alt="Territorial.io Cover">
+                <div>Territorial.io</div>
+            </a>
+                            <a class="game-link" href="tetrisgame.html">
+                <img src="tetris.png" alt="Tetris Cover">
+                <div>Tetris</div>
+            </a>
+                            <a class="game-link" href="pacman.html">
+                <img src="pacman.jpg" alt="Pac-Man Cover">
+                <div>Pac-Man</div>
+            </a>
+                            <a class="game-link" href="crossyroad.html">
+                <img src="crossyroad.jpg" alt="Crossy Road Cover">
+                <div>Crossy Road</div>
+            </a>
+        </div>
+        <div id="no-results" class="no-results">No games match your search.</div>
+    </div>
+    <script>
+        (function(){
+            const input = document.getElementById('search-input');
+            const gameList = document.querySelectorAll('.game-link');
+            const noResults = document.getElementById('no-results');
+
+            function normalize(text){
+                return text.trim().toLowerCase();
+            }
+
+            function filterGames(){
+                const q = normalize(input.value || '');
+                let visible = 0;
+                gameList.forEach(a => {
+                    const title = normalize(a.textContent || a.innerText || '');
+                    if(q === '' || title.indexOf(q) !== -1){
+                        a.style.display = '';
+                        visible++;
+                    } else {
+                        a.style.display = 'none';
+                    }
+                });
+                noResults.style.display = visible === 0 ? 'block' : 'none';
+            }
+
+            input.addEventListener('input', filterGames);
+            // optional: allow pressing Escape to clear
+            input.addEventListener('keydown', (e) => { if(e.key === 'Escape'){ input.value = ''; filterGames(); } });
+        })();
+    </script>
+</body>
+</html>
