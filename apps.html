@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>🐔 Chicken King's Vault 🐔</title>
+    <style>
+
+        .topbar {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 12px 0;
+        }
+        .topbar .nav {
+            display: flex;
+            gap: 10px;
+        }
+        .topbar .nav a {
+            background: rgba(255,255,255,0.04);
+            color: #ffffff;
+            padding: 8px 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .topbar .nav a:hover {
+            background: rgba(255,255,255,0.06);
+        }
+        .discord-link {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        .discord-link a {
+            color: #7289DA;
+            text-decoration: none;
+        }
+        .discord-link a:hover {
+            text-decoration: underline;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #222;
+            color: #fff;
+        }
+        .center-content {
+            text-align: center;
+        }
+        .game-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            justify-items: center;
+            margin-top: 30px;
+        }
+        .search-container {
+            margin-top: 18px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .search-input {
+            width: 720px;
+            max-width: calc(100% - 40px);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.04);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .search-input::placeholder { color: rgba(255,255,255,0.55); }
+        .no-results {
+            margin-top: 18px;
+            color: #ff6b6b;
+            font-weight: bold;
+            display: none;
+        }
+        .game-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2em;
+            width: 200px;
+        }
+        .game-link img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            margin-bottom: 10px;
+        }
+        .game-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>🐔 Chicken King's Vault 🐔</h1>
+    <header class="topbar">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="gamepage.html">Games</a>
+            <a href="apps.html">Apps</a>
+            <a href="https://discord.gg/MYpMKuf3uQ" _target="blank">Discord</a>
+        </nav>
+    </header>
+    
+    <div class="center-content">
+        <p>All apps are from The Ultimate Game Stash!</p>
+        <div class="game-list">
+                            <a class="game-link" href="aichatbot.html">
+                <img src="ai.jpg" alt="AI Chatbot Cover">
+                <div>AI Chatbot</div>
+            </a>
+                            <a class="game-link" href="proxy.html">
+                <img src="proxy.png" alt="Sandstone Proxy Cover">
+                <div>Sandstone Proxy</div>
+            </a>
+                            <a class="game-link" href="emulatorjs.html">
+                <img src="emulatorjs.png" alt="EmulatorJS Cover">
+                <div>EmulatorJS</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
