@@ -102,12 +102,14 @@ window.fetch = async function(resource, options) {
 
 /* ================= CACHE CHECK ================= */
 async function isCached() {
+  if (typeof caches === 'undefined') return false;
   const cache = await caches.open(CACHE_NAME);
   const done = await cache.match("CACHE_COMPLETE");
   return !!done;
 }
 
 async function cleanupOldCaches() {
+  if (typeof caches === 'undefined') return;
   const cacheNames = await caches.keys();
 
   await Promise.all(
@@ -132,6 +134,7 @@ async function unzipAndStore(zipBlob) {
   const files = Object.values(zip.files).filter(f => !f.dir);
   const total = files.length;
 
+  if (typeof caches === 'undefined') throw new Error('Cache API unavailable — needs HTTPS');
   const cache = await caches.open(CACHE_NAME);
 
   let processed = 0;

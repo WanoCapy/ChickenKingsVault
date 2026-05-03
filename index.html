@@ -1,367 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LM67KGEJRK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LM67KGEJRK');
-</script>
-
-    <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
-    <title>Univeristy of Adelaide</title>
-    <style>
-        .discord-link {
-            margin: 20px 0;
-            font-size: 18px;
-        }
-        .discord-link a {
-            color: #7289DA;
-            text-decoration: none;
-        }
-        .discord-link a:hover {
-            text-decoration: underline;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            background: #222;
-            color: #fff;
-        }
-        .site-logo {
-            font-size: 2.2rem;
-            font-weight: 900;
-            color: #ffffff;
-            text-shadow: 0 0 8px rgba(0,0,0,0.5);
-            margin: 0 0 20px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 8px 14px;
-            border-radius: 16px;
-            background: #222;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-        .logo-icon {
-            width: 32px;
-            height: 32px;
-            object-fit: contain;
-            display: inline-block;
-        }
-        .discord-top-right {
-            position: fixed;
-            top: 14px;
-            right: 14px;
-            z-index: 999;
-            background: #5865F2;
-            border-radius: 12px;
-            width: 46px;
-            height: 46px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.35);
-        }
-        .discord-top-right img {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-        }
-        .discord-top-right a {
-            display: inline-flex;
-            width: 100%;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-        }
-        .center-content {
-            text-align: center;
-        }
-        .game-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 24px;
-            justify-items: center;
-            margin-top: 30px;
-            width: 100%;
-            max-width: 1280px;
-            padding: 0 16px;
-            transition: transform 0.1s ease-out;
-            transform-origin: 50% 2%;
-        }
-        .search-container {
-            margin-top: 18px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        .search-input {
-            width: 720px;
-            max-width: calc(100% - 40px);
-            padding: 10px 14px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.12);
-            background: rgba(255,255,255,0.04);
-            color: #fff;
-            font-size: 16px;
-            outline: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-        }
-        .search-input::placeholder { color: rgba(255,255,255,0.55); }
-        .search-count {
-            display: none;
-        }
-        .no-results {
-            margin-top: 18px;
-            color: #ff6b6b;
-            font-weight: bold;
-            display: none;
-        }
-        .game-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 1.2em;
-            width: 100%;
-            max-width: 220px;
-        }
-        .game-link img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-        }
-        .game-link:hover {
-            text-decoration: underline;
-        }
-        .random {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .game-rand {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 0.8em;
-            width: 100%;
-            max-width: 220px;
-        }
-        .game-rand img {
-            width: 50%;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-        }
-        .game-rand:hover {
-            text-decoration: underline;
-        }
-    
-        /* --- Added Hover Effects --- */
-        .game-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 1.2em;
-            width: 100%;
-            max-width: 220px;
-            transition: transform 0.25s ease, filter 0.25s ease;
-        }
-        .game-link img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .game-link:hover {
-            transform: translateY(-6px);
-            filter: brightness(1.08);
-        }
-        .game-link:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 6px 22px rgba(255,255,255,0.25);
-        }
-        .game-link:hover div {
-            text-decoration: underline;
-            filter: brightness(1.2);
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chicken Kings Vault — hundreds of free unblocked games.">
+    <meta property="og:title" content="Chicken Kings Vault">
+    <meta property="og:description" content="Hundreds of free unblocked games. Play now.">
+    <meta property="og:image" content="/favicon.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Chicken Kings Vault">
+    <meta name="twitter:description" content="Hundreds of free unblocked games.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <title>Chicken Kings Vault</title>
+    <link rel="stylesheet" href="assets/app.css">
 
-        .game-rand {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-decoration: none;
-            color: #ffffff;
-            font-size: 0.8em;
-            width: 100%;
-            max-width: 220px;
-            transition: transform 0.25s ease, filter 0.25s ease;
-        }
-        .game-rand img {
-            width: 50%;
-            height: auto;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
-            margin-bottom: 10px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .game-rand:hover {
-            transform: translateY(-6px);
-            filter: brightness(1.08);
-        }
-        .game-rand:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 6px 22px rgba(255,255,255,0.25);
-        }
-        .game-rand:hover div {
-            text-decoration: underline;
-            filter: brightness(1.2);
-        }
-    </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM67KGEJRK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-LM67KGEJRK');
+    </script>
 </head>
 <body>
-    <div class="discord-top-right">
-        <a href="https://discord.gg/RgGKcZxq4T" target="_blank" rel="noopener noreferrer" aria-label="Join the Discord server">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord logo" />
-        </a>
-    </div>
-    <h1 class="site-logo"><a onclick="spinnywheel(true)" class="logo-icon"><img src="favicon.png" alt="logo"></a>Chicken Kings Vault<a href="https://youtu.be/BXJjBo_u3WM?si=U_8QGjcfUxvZm0IM" target="_blank" class="logo-icon"><img src="favicon.png" alt="logo"></a></h1>
-    <div class="center-content">
-        <p>might be a cool game or something</p>
-        <div class="random">
-            <button class="redobutton" onclick="randomgame()">I don't like this game</button>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="wordmark center-title" href="/">
+                <img src="favicon.png" alt="Chicken Kings Vault logo">
+                Chicken Kings Vault
+                <img src="favicon.png" alt="Chicken Kings Vault logo">
+            </a>
+            <nav class="site-nav">
+                <a href="https://discord.gg/RgGKcZxq4T" target="_blank" rel="noopener noreferrer">discord</a>
+            </nav>
         </div>
-        <p>All game credits go to gn-math, truffled.lol and Ultimate Game Stash</p>
-        <div class="search-container">
-            <input id="search-input" class="search-input" type="search" placeholder="Search games..." aria-label="Search games">
-        </div>
-        <button onclick="spinnywheel()">spinny</button>
-        <div class="game-list">
-        </div>
-        <div id="no-results" class="no-results">No games match your search.</div>
-    </div>
-    <!--leave this script block empty it's only here to load games.js-->
+    </header>
+
+    <main>
+        <section class="controls-bar">
+            <input id="search" type="search" placeholder="search games..." autocomplete="off" spellcheck="false">
+        </section>
+
+        <p id="no-results" class="no-results" style="display:none">nothing here</p>
+        <div class="game-grid" id="game-grid"></div>
+    </main>
+
+    <footer class="site-footer">
+        <p>games from <a href="https://truffled.lol" target="_blank" rel="noopener">truffled.lol</a>, gn-math &amp; Ultimate Game Stash &mdash; <a href="/alg/">algorithm debug</a></p>
+    </footer>
+
     <script src="games.js"></script>
-    <script>
-        const gameList = document.querySelector('.game-list')
-        let spinny = false
-        let inbt = null
-        let number = 0;
-        // adds all the games
-        function a(){
-            document.querySelector(".game-list").innerHTML = games;
-        }
-        a()
-
-        function randomgame(){
-            const games = document.querySelectorAll('.game-link');
-            const range = games.length - 1 + 1;
-            const array = new Uint32Array(1);
-            window.crypto.getRandomValues(array);
-            let thing = 1 + (array[0] % range);
-            const newnode = games[thing].cloneNode(true)
-            if(document.querySelector('.game-rand') != null){
-                document.querySelector('.game-rand').remove()
-            }
-            document.querySelector('.random').appendChild(newnode);
-            newnode.classList.remove('game-link');
-            newnode.classList.add("game-rand")
-        }
-        randomgame()
-        function spinnywheel(reset=false) {
-            if(reset === true){number=0; gameList.style.transform = `rotate(${0}deg)`; return}
-            if(!spinny){
-                spinny = true;
-
-                inbt = setInterval(() => {
-                    number++;
-                    gameList.style.transform = `rotate(${number}deg)`;
-                }, 20);
-            }else{
-                spinny = false;
-                clearInterval(inbt);
-                inbt = null;
-            }
-        }
-    </script>
-    <script>
-        (function(){
-            function sortGameListAlpha(){
-                const list = document.querySelector('.game-list');
-                if(!list) return;
-                const items = Array.from(list.querySelectorAll('.game-link'));
-                items.sort((a,b) => {
-                    const ta = (a.textContent || '').trim().toLowerCase();
-                    const tb = (b.textContent || '').trim().toLowerCase();
-                    return ta.localeCompare(tb, undefined, {numeric: true});
-                });
-                items.forEach(i => list.appendChild(i));
-            }
-            sortGameListAlpha();
-
-            const input = document.getElementById('search-input');
-            const gameList = document.querySelectorAll('.game-link');
-            const noResults = document.getElementById('no-results');
-            const total = gameList.length;
-            // initialize placeholder with total games
-            if(input){
-                input.placeholder = `Search ${total} Games...`;
-                input.setAttribute('aria-label', `Search ${total} Games...`);
-            }
-
-            function normalize(text){
-                return text.trim().toLowerCase();
-            }
-
-            function filterGames(){
-                const q = normalize(input.value || '');
-                let visible = 0;
-                if(q == "end") {
-                    window.open("https://youtu.be/eVTXPUF4Oz4?si=fJegVrBYO1yf0I80")
-                }
-                gameList.forEach(a => {
-                    const title = normalize(a.textContent || a.innerText || '');
-                    if(q === '' || title.indexOf(q) !== -1){
-                        a.style.display = '';
-                        visible++;
-                    } else {
-                        a.style.display = 'none';
-                    }
-                });
-                noResults.style.display = visible === 0 ? 'block' : 'none';
-            }
-
-            input.addEventListener('input', filterGames);
-            
-            input.addEventListener('keydown', (e) => { if(e.key === 'Escape'){ input.value = ''; filterGames(); } });
-        })();
-    </script>
+    <script src="assets/app.js"></script>
 </body>
 </html>

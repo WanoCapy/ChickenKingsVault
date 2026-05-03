@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -14,12 +14,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Kindergarten 3</title>
-    <style>
-        html,body { height:100%; margin:0; font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
-        .toolbar { display:flex; gap:.5rem; padding:.5rem; background:#111; color:#fff; align-items:center; }
-        button { background:#0b84ff; color:#fff; border:0; padding:.5rem .8rem; border-radius:4px; cursor:pointer; }
+        <style>
+        :root {
+            --bg: #0b0b0d;
+            --surface: #141417;
+            --surface-alt: #1d1d21;
+            --accent: #f5a623;
+            --accent-fg: #000;
+            --text: #e2e2e6;
+            --text-muted: #7a7a82;
+            --border: rgba(255, 255, 255, 0.07);
+            --radius: 10px;
+            --radius-sm: 6px;
+        }
+        html,body { height:100%; margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); }
+        .toolbar { display:flex; gap:.5rem; padding:.5rem; background: rgba(11, 11, 13, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); color: var(--text); align-items:center; }
+        button { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); padding: 5px 13px; font-size: 13px; transition: color 0.12s, border-color 0.12s, background 0.12s; cursor:pointer; line-height: 1; }
+        button:hover { color: var(--text); border-color: rgba(255, 255, 255, 0.18); }
         button:active { transform:translateY(1px); }
-        .frame-wrapper { height: calc(100% - 48px); background:#000; display:flex; }
+        .frame-wrapper { height: calc(100% - 56px); background: var(--bg); display:flex; }
         iframe { border:0; width:100%; height:100%; display:block; }
     </style>
 </head>
@@ -97,3 +110,9 @@
 </body>
 
 </html>
+
+
+
+
+
+
