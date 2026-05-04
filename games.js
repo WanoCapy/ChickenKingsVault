@@ -3310,4 +3310,16 @@ const games =`
 <a class="game-link" href="gamefiles/whosyourdaddy.html">
     <img src="gameimages/whosyourdaddy.png" alt="Whos Your Daddy? Cover">
     <div>Whos Your Daddy?</div>
+</a>
+<a class="game-link" href="gamefiles/plagueinc.html">
+    <img src="gameimages/plagueinc.png" alt="Plague Inc Cover">
+    <div>Plague Inc</div>
+</a>
+<a class="game-link" href="gamefiles/vampiresurvivors.html">
+    <img src="gameimages/vampiresurvivors.png" alt="Vampire Survivors Cover">
+    <div>Vampire Survivors</div>
+</a>
+<a class="game-link" href="gamefiles/spaceflightsimulator.html">
+    <img src="gameimages/Spaceflight Simulator.png" alt="Spaceflight Simulator Cover">
+    <div>Spaceflight Simulator</div>
 </a>`;
