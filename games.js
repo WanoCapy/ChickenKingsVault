@@ -3039,10 +3039,6 @@ const games =`
     <img src="gameimages/grandtheftautosanandreas.jpg" alt="Grand Theft Auto San Andreas Cover">
     <div>Grand Theft Auto San Andreas</div>
 </a> 
-<a class="game-link" href="gamefiles/thebindingofisaacwrathofthelambeternal.html">
-    <img src="gameimages/thebindingofisaacwrathofthelambeternal.png" alt="The Binding of Isaac: Wrath of The Lamb Eternal Cover">
-    <div>The Binding of Isaac: Wrath of The Lamb Eternal</div>
-</a> 
 <a class="game-link" href="gamefiles/thebindingofisaac.html">
     <img src="gameimages/thebindingofisaacrebirth.webp" alt="The Binding of Isaac Cover">
     <div>The Binding of Isaac</div>
