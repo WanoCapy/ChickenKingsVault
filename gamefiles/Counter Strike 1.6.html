@@ -1,4 +1,4 @@
-﻿<Module>
+<Module>
 
 
 <!-- Ultimate Game Stash file--> 
@@ -30,16 +30,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sel-lers/x@main/style.css"/>
 <!-- Yandex Games SDK -->
 <style>
-        /* Ð£Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð¿Ð¾ Ð½Ð°Ð¶Ð°Ñ‚Ð¸ÑŽ ÐºÐ»Ð°Ð²Ð¸Ñˆ */
+        /* Убираем выделение по нажатию клавиш */
         canvas:focus {
             outline: none;
         }
 
         html, body {
-            /* Ð£Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ñ‹ */
+            /* Убираем отступы */
             padding: 0;
             margin: 0;
-            /* ÐžÑ‚ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ ÑÐºÑ€Ð¾Ð»Ð» Ð¸ Ð»Ð¾Ð½Ð³Ñ‚Ð°Ð¿ Ð½Ð° IOS */
+            /* Отключаем скролл и лонгтап на IOS */
             overflow: hidden;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -48,7 +48,7 @@
             -ms-user-select: none;
             user-select: none;
             -webkit-tap-highlight-color: rgba(0,0,0,0);
-            /* Ð¡Ñ‚Ð°Ð²Ð¸Ð¼ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ð½Ð° 100% */
+            /* Ставим высоту на 100% */
             height: 100%;
         }
     </style>
@@ -109,16 +109,16 @@
             
         }
 
-        // Ð¤Ð¾Ð½Ð¾Ð²Ð¾Ðµ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð¿Ñ€Ð¸ Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐµ Ð¸Ð³Ñ€Ñ‹. ÐŸÑ€Ð¸ ÑÐ±Ð¾Ñ€ÐºÐµ Ð±Ð¸Ð»Ð´Ð° ÐºÐ¾Ð´ Ð¼ÐµÐ½ÑÐµÑ‚ÑÑ Ð²Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°.
+        // Фоновое изображение при загрузке игры. При сборке билда код меняется взависимости от настроек проекта.
         
         loadingCover.style.background = "url('https://cdn.jsdelivr.net/gh/sel-lers/x@main/background.jpg') center / cover";
 
         loadingCover.style.display = "";
 
-        // Ð’Ñ‹ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ð¿Ð¾ÑÐ²Ð»ÐµÐ½Ð¸Ðµ Ð¼ÐµÐ½ÑŽ Ð¿Ñ€Ð¸ Ð¿Ñ€Ð°Ð²Ð¾Ð¼ ÐºÐ»Ð¸ÐºÐµ Ð¼Ñ‹ÑˆÐ¸
+        // Выключаем появление меню при правом клике мыши
         document.addEventListener('contextmenu', event => event.preventDefault());
 
-        // Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÐ¼ Ñ„Ð¾ÐºÑƒÑ, ÐµÑÐ»Ð¸ ÐºÐ»Ð¸ÐºÐ½ÑƒÐ»Ð¸ Ð¿Ð¾ ÑÐºÑ€Ð°Ð½Ñƒ
+        // Возвращаем фокус, если кликнули по экрану
         function FocusGame() {
             window.focus();
             canvas.focus();
@@ -136,7 +136,7 @@
         let myGameInstance;
         let ysdk = null; // Yandex SDK pasif
 
-        // VarsayÄ±lan deÄŸerlerle environmentData, cloudSaves, paymentsData ve playerData gibi deÄŸiÅŸkenlerin tanÄ±mlanmasÄ±
+        // Varsayılan değerlerle environmentData, cloudSaves, paymentsData ve playerData gibi değişkenlerin tanımlanması
         let environmentData = {
             language: "en",
             domain: "default_domain",
@@ -166,13 +166,13 @@
         
         let cloudSaves = 'noData';
         let paymentsData = 'none';
-        let playerData = 'noData'; // VarsayÄ±lan playerData tanÄ±mÄ±
+        let playerData = 'noData'; // Varsayılan playerData tanımı
         let player = null;
         let payments = null;
         let initGame = false;
         let nowFullAdOpen = false;
 
-        // Eksik olabilecek tÃ¼m SDK iÅŸlevlerini varsayÄ±lan olarak tanÄ±mla
+        // Eksik olabilecek tüm SDK işlevlerini varsayılan olarak tanımla
         function GetPayments() { console.warn("GetPayments is not implemented"); return Promise.resolve("none"); }
         function SaveCloud() { console.warn("SaveCloud is not implemented"); }
         function LoadCloud() { console.warn("LoadCloud is not implemented"); return Promise.resolve("noData"); }
@@ -191,9 +191,9 @@
                 function InitLeaderboard() { console.warn("ConsumePurchase is not implemented"); }
                 
                 
-        function ConsumePurchases() { console.warn("ConsumePurchases is not implemented"); } // VarsayÄ±lan tanÄ±m eklendi
+        function ConsumePurchases() { console.warn("ConsumePurchases is not implemented"); } // Varsayılan tanım eklendi
 
-        // Hata yakalama ile Unity baÅŸlatma iÅŸlemi
+        // Hata yakalama ile Unity başlatma işlemi
         try {
             const script = document.createElement("script");
             script.src = loaderUrl;
@@ -207,14 +207,14 @@
                         myGameInstance = unityInstance;
                         loadingCover.style.display = "none";
                     }).catch((message) => {
-                        console.error("Unity yÃ¼kleme hatasÄ±:", message);
+                        console.error("Unity yükleme hatası:", message);
                     });
                 };
                 StartUnityInstance();
             };
             document.body.appendChild(script);
         } catch (error) {
-            console.error("BaÅŸlatma sÄ±rasÄ±nda hata:", error);
+            console.error("Başlatma sırasında hata:", error);
         }
 
         function InitGame() {
@@ -225,13 +225,13 @@
                     myGameInstance.SendMessage('YandexGame', 'OpenFullAd');
                 }
             } catch (error) {
-                console.error("InitGame sÄ±rasÄ±nda hata:", error);
+                console.error("InitGame sırasında hata:", error);
             }
         }
 
-        // Hata oluÅŸtuÄŸunda oyuna devam etmek iÃ§in tÃ¼m hatalarÄ± global olarak yakalayan yapÄ±
+        // Hata oluştuğunda oyuna devam etmek için tüm hataları global olarak yakalayan yapı
         window.addEventListener("unhandledrejection", function(event) {
-            console.warn("Hata es geÃ§ildi:", event.reason);
+            console.warn("Hata es geçildi:", event.reason);
             event.preventDefault();
         });
 </script>

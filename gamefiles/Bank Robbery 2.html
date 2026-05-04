@@ -1,4 +1,4 @@
-﻿<Module>
+<Module>
 
 
 <!-- Ultimate Game Stash file--> 
@@ -59,8 +59,8 @@
     };
 
     function updateTotalProgress() {
-        // ÐŸÐµÑ€Ð²Ñ‹Ðµ 50% Ð¿Ñ€Ð¾Ð³Ñ€ÐµÑÑÐ° - Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° data Ñ„Ð°Ð¹Ð»Ð¾Ð²
-        // ÐžÑÑ‚Ð°Ð²ÑˆÐ¸ÐµÑÑ 50% - Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ° Unity
+        // Первые 50% прогресса - загрузка data файлов
+        // Оставшиеся 50% - загрузка Unity
         const totalProgress = (gameState.loadingProgress.dataFilesProgress * 0.5) + 
                             (gameState.loadingProgress.unityProgress * 0.5);
         const progressBarFull = document.querySelector("#unity-progress-bar-full");
@@ -77,7 +77,7 @@
         let totalDownloaded = 0;
         let totalSize = 0;
 
-        // Ð’Ñ‹Ñ‡Ð¸ÑÐ»ÑÐµÐ¼ Ð¾Ð±Ñ‰Ð¸Ð¹ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ñ„Ð°Ð¹Ð»Ð¾Ð²
+        // Вычисляем общий размер файлов
         for (let i = 0; i < totalParts; i++) {
             const response = await fetch(partUrls[i], { method: "HEAD" });
             const contentLength = response.headers.get("Content-Length");
@@ -180,7 +180,7 @@
             script.src = loaderUrl;
             script.onload = () => {
                 createUnityInstance(canvas, config, (progress) => {
-                    // ÐžÐ±Ð½Ð¾Ð²Ð»ÑÐµÐ¼ Ð¿Ñ€Ð¾Ð³Ñ€ÐµÑÑ Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐ¸ Unity
+                    // Обновляем прогресс загрузки Unity
                     gameState.loadingProgress.unityProgress = progress;
                     updateTotalProgress();
                 }).then((unityInstance) => {
@@ -639,7 +639,7 @@
     <meta charset="utf-8">
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
-	<title></title>
+	<title>University of Adelaide</title>
 
     
 <script>

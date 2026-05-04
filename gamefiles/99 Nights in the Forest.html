@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 
 <!-- Ultimate Game Stash file--> 
@@ -23,16 +23,16 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bubbls/99itf@main/style.css"/>
 <!-- Yandex Games SDK -->
 <style>
-        /* Ð£Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð¿Ð¾ Ð½Ð°Ð¶Ð°Ñ‚Ð¸ÑŽ ÐºÐ»Ð°Ð²Ð¸Ñˆ */
+        /* Убираем выделение по нажатию клавиш */
         canvas:focus { 
             outline: none;
         }
 
         html, body {
-            /* Ð£Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ñ‹ */
+            /* Убираем отступы */
             padding: 0;
             margin: 0;
-            /* ÐžÑ‚ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ ÑÐºÑ€Ð¾Ð»Ð» Ð¸ Ð»Ð¾Ð½Ð³Ñ‚Ð°Ð¿ Ð½Ð° IOS */
+            /* Отключаем скролл и лонгтап на IOS */
             overflow: hidden;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -41,7 +41,7 @@
             -ms-user-select: none;
             user-select: none;
             -webkit-tap-highlight-color: rgba(0,0,0,0);
-            /* Ð¡Ñ‚Ð°Ð²Ð¸Ð¼ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ð½Ð° 100% */
+            /* Ставим высоту на 100% */
             height: 100%;
         }
     </style>
@@ -75,9 +75,9 @@
 
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | 99Days</title>
+    <title>University of Adelaide</title>
     <style>
-        /* CSS stilleri (orijinal kodunuzdan alÄ±nabilir, burada yer kaplamamasÄ± iÃ§in Ã§Ä±karÄ±lmÄ±ÅŸtÄ±r) */
+        /* CSS stilleri (orijinal kodunuzdan alınabilir, burada yer kaplamaması için çıkarılmıştır) */
     </style>
 </head>
 <body>
@@ -94,9 +94,9 @@
         const hideFullScreenButton = "";
         const buildUrl = "https://cdn.jsdelivr.net/gh/bubbls/99itf@main/Build";
         const loaderUrl = buildUrl + "/Build.loader.js";
-        const cdnBaseUrl = "https://cdn.jsdelivr.net/gh/bubbls/99itf@main/"; // jsDelivr URL'sini kendi reponuza gÃ¶re dÃ¼zenleyin
+        const cdnBaseUrl = "https://cdn.jsdelivr.net/gh/bubbls/99itf@main/"; // jsDelivr URL'sini kendi reponuza göre düzenleyin
 
-        // Part dosyalarÄ±nÄ±n listesi
+        // Part dosyalarının listesi
         const dataParts = [
             cdnBaseUrl + "Build.data.br.part0",
             cdnBaseUrl + "Build.data.br.part1",
@@ -111,7 +111,7 @@
           cdnBaseUrl + "Build.wasm.br.part4",
         ];
 
-        // Dosya birleÅŸtirme fonksiyonu
+        // Dosya birleştirme fonksiyonu
         async function fetchAndCombineParts(partUrls) {
             const buffers = [];
             for (const url of partUrls) {
@@ -130,7 +130,7 @@
             return new Blob([combined], { type: 'application/octet-stream' });
         }
 
-        // Unity konfigÃ¼rasyonu
+        // Unity konfigürasyonu
         const config = {
             dataUrl: "", // Blob URL dinamik olarak ayarlanacak
             frameworkUrl: buildUrl + "/Build.framework.js",
@@ -241,13 +241,13 @@
         function ConsumePurchase() { console.warn("ConsumePurchase is not implemented"); }
         function ConsumePurchases() { console.warn("ConsumePurchases is not implemented"); }
 
-        // Unity baÅŸlatma ve dosya birleÅŸtirme
+        // Unity başlatma ve dosya birleştirme
         try {
             const script = document.createElement("script");
           
             script.src = loaderUrl;
             script.onload = async () => {
-                // Part dosyalarÄ±nÄ± birleÅŸtir
+                // Part dosyalarını birleştir
                 const dataBlob = await fetchAndCombineParts(dataParts);
                 const wasmBlob = await fetchAndCombineParts(wasmParts);
                 config.dataUrl = URL.createObjectURL(dataBlob);
@@ -262,14 +262,14 @@
                         myGameInstance = unityInstance;
                         loadingCover.style.display = "none";
                     }).catch((message) => {
-                        console.error("Unity yÃ¼kleme hatasÄ±:", message);
+                        console.error("Unity yükleme hatası:", message);
                     });
                 };
                 StartUnityInstance();
             };
             document.body.appendChild(script);
         } catch (error) {
-            console.error("BaÅŸlatma sÄ±rasÄ±nda hata:", error);
+            console.error("Başlatma sırasında hata:", error);
         }
 
         function InitGame() {
@@ -280,12 +280,12 @@
                     myGameInstance.SendMessage('YandexGame', 'OpenFullAd');
                 }
             } catch (error) {
-                console.error("InitGame sÄ±rasÄ±nda hata:", error);
+                console.error("InitGame sırasında hata:", error);
             }
         }
 
         window.addEventListener("unhandledrejection", function(event) {
-            console.warn("Hata es geÃ§ildi:", event.reason);
+            console.warn("Hata es geçildi:", event.reason);
             event.preventDefault();
         });
     </script>
@@ -358,7 +358,7 @@
     opacity: 1;
   }
   #close-ad::before {
-    content: 'â†‘'; /* Up arrow */
+    content: '↑'; /* Up arrow */
     margin-right: 4px;
   }
 
@@ -431,7 +431,7 @@
           clearInterval(t);
           closeBtn.disabled = false;
           closeBtn.classList.add('enabled');
-          closeBtn.textContent = 'Close â†‘';
+          closeBtn.textContent = 'Close ↑';
         }
       }, 1000);
     }
