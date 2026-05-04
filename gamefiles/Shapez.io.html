@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" style="--ui-scale: 1.33">
   <head>
 <!-- Google tag (gtag.js) -->
@@ -12,7 +12,7 @@
 </script>
 
     <base href="https://cdn.jsdelivr.net/gh/genizy/google-class@main/shapezio/">
-    <title>shapez Demo - Factory Automation Game</title>
+    <title>University of Adelaide</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link
       rel="stylesheet"
@@ -332,7 +332,7 @@
             return;
           }
 
-          console.error("ðŸ‘€ App Error:", event, source, lineno, colno, error);
+          console.error("👀 App Error:", event, source, lineno, colno, error);
           var element = document.createElement("div");
           element.id = "ll_preload_error";
 
@@ -374,20 +374,20 @@
 
         function expectJsParsed() {
           if (!callbackDone) {
-            console.error("ðŸ‘€ Got no core callback");
+            console.error("👀 Got no core callback");
             throw new Error("Core thread failed to respond within time.");
           }
         }
 
         function onJsLoaded() {
-          console.log("ðŸ‘€ Core loaded at", Math.floor(performance.now()), "ms");
+          console.log("👀 Core loaded at", Math.floor(performance.now()), "ms");
           loadTimeout = setTimeout(expectJsParsed, 120000);
           window.removeEventListener("unhandledrejection", errorHandler);
         }
 
         window.coreThreadLoadedCb = function () {
           console.log(
-            "ðŸ‘€ Core responded at",
+            "👀 Core responded at",
             Math.floor(performance.now()),
             "ms"
           );
@@ -487,3 +487,5 @@
     </div>
   </body>
 </html>
+
+

@@ -1,4 +1,4 @@
-﻿
+
 
 <!-- Ultimate Game Stash file--> 
 <!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
@@ -18,7 +18,7 @@
 </script>
 
     <meta charset="utf-8" />
-    <title>Sandboxels</title>
+    <title>University of Adelaide</title>
     <meta name="description" content="A falling sand simulation game, with heat transfer, electricity, density, fire, explosions, and more." />
     <meta name="keywords" content="falling sand, elements, pixel art, simulator, powder" />
     <meta name="author" content="R74n" />
@@ -2722,7 +2722,7 @@
           stateLow: "dry_ice",
           state: "gas",
           density: 1.977,
-          alias: ["CO2", "COâ‚‚"],
+          alias: ["CO2", "CO₂"],
         },
         oil: {
           color: "#470e00",
@@ -7656,9 +7656,9 @@
         0: 65, // null -> 0
         58: 65, // : -> A
         91: 97, // [ -> a
-        123: 192, // { -> Ã€
-        215: 216, // Ã— -> Ã˜
-        247: 248, // Ã· -> Ã¸
+        123: 192, // { -> À
+        215: 216, // × -> Ø
+        247: 248, // ÷ -> ø
         688: 880,
         884: 886,
         888: 891,
@@ -8817,11 +8817,11 @@
         }
         if (shiftDown) {
           if (shiftDown == 1) {
-            stats += "<span id='stat-shift' class='stat'>[â†‘ ]</span>";
+            stats += "<span id='stat-shift' class='stat'>[↑ ]</span>";
           } else if (shiftDown == 2) {
             stats += "<span id='stat-shift' class='stat'>[A ]</span>";
           } else if (shiftDown == 3) {
-            stats += "<span id='stat-shift' class='stat'>[ â†‘]</span>";
+            stats += "<span id='stat-shift' class='stat'>[ ↑]</span>";
           } else if (shiftDown == 4) {
             stats += "<span id='stat-shift' class='stat'>[ A]</span>";
           }
@@ -8837,10 +8837,10 @@
         // temp is Celcius
         if (!settings["units"] || settings["units"] === "m") {
           // Celsius
-          return Math.round(temp) + "Â°C";
+          return Math.round(temp) + "°C";
         } else if (settings["units"] === "i") {
           // Fahrenheit
-          return Math.round(temp * 1.8 + 32) + "Â°F";
+          return Math.round(temp * 1.8 + 32) + "°F";
         } else if (settings["units"] === "s") {
           // Kelvin
           return Math.round(temp + 273.15) + "K";
@@ -8851,14 +8851,14 @@
         // default/metric = kg/m3, imperial = lb/ft3, si = g/cm3
         if (!settings["units"] || settings["units"] === "m") {
           // kg/m3
-          return Math.round(density) + " kgâ„m<sup>3</sup>";
+          return Math.round(density) + " kg⁄m<sup>3</sup>";
         } else if (settings["units"] === "i") {
           // lb/ft3
-          return Math.round(density / 16.018) + " lbâ„ft<sup>3</sup>";
+          return Math.round(density / 16.018) + " lb⁄ft<sup>3</sup>";
         } else if (settings["units"] === "s") {
           // g/cm3
           // round to 2 decimal places
-          return Math.round(density / 10) / 100 + " gâ„cm<sup>3</sup>";
+          return Math.round(density / 10) / 100 + " g⁄cm<sup>3</sup>";
         }
       }
 
@@ -9146,7 +9146,7 @@
             infoText.innerHTML += temptext;
           } else if (element === "") {
             infoTitle.innerHTML = "Browse";
-            infoText.innerHTML = "\n" + infoLink("all") + " â€¢ " + infoLink("undiscovered") + " â€¢ " + infoLink("discovered") + "\n\n";
+            infoText.innerHTML = "\n" + infoLink("all") + " • " + infoLink("undiscovered") + " • " + infoLink("discovered") + "\n\n";
             var temptext = "";
             for (var i = 0; i < categoryList.length; i++) {
               temptext += infoLink(categoryList[i]) + "\n";
@@ -10159,7 +10159,7 @@
         // Set the first button in categoryControls div to be the current category
         document.getElementById("categoryControls").children[0].click();
         document.getElementById("extraInfo").innerHTML +=
-          "<small><p>There are " + elementCount + " elements, including " + hiddenCount + " hidden ones.</p><p>Â©2021-" + new Date().getFullYear() + ". All Rights Reserved. <a href='https://r74n.com'>R74n</a></p></small>";
+          "<small><p>There are " + elementCount + " elements, including " + hiddenCount + " hidden ones.</p><p>©2021-" + new Date().getFullYear() + ". All Rights Reserved. <a href='https://r74n.com'>R74n</a></p></small>";
         selectElement(currentElement);
         focusGame();
         // For every button element, onkeyup="event.preventDefault()"
@@ -10261,8 +10261,8 @@
         </div>
         <div id="extraInfo">
           <small>
-            <a href="controls.txt" target="_blank">Controls</a> â€¢ <a href="changelog.txt" target="_blank">Changelog</a> â€¢
-            <a href="https://docs.google.com/document/d/1R8xljj_J-K5oU-9y4louwplQmM-ZBvUfXmhbgj5LYdk/edit?usp=sharing" target="_blank">Feedback</a> â€¢
+            <a href="controls.txt" target="_blank">Controls</a> • <a href="changelog.txt" target="_blank">Changelog</a> •
+            <a href="https://docs.google.com/document/d/1R8xljj_J-K5oU-9y4louwplQmM-ZBvUfXmhbgj5LYdk/edit?usp=sharing" target="_blank">Feedback</a> •
             <a href="https://discord.gg/ejUc6YPQuS" target="_blank" style="text-shadow: 0px 2px 10px #ff00ff;">Discord</a>
           </small>
         </div>
@@ -10273,7 +10273,7 @@
       <div id="infoScreen">
         <!--Element Info Page-->
         <button class="XButton" onclick="closeMenu();">-</button>
-        <span class="infoLink noselect" id="infoBackButton" onclick="infoBack()" style="text-decoration: none !important; display: none;">â†&nbsp;</span><span class="menuTitle" id="infoTitle">Title</span>
+        <span class="infoLink noselect" id="infoBackButton" onclick="infoBack()" style="text-decoration: none !important; display: none;">←&nbsp;</span><span class="menuTitle" id="infoTitle">Title</span>
         <div class="menuText" id="infoText">Text</div>
       </div>
       <input type="text" id="infoSearch" placeholder="Element..." oninput="showInfo(this.value);" />
@@ -10370,3 +10370,5 @@
     <script src="/js/main.js"></script>
   </body>
 </html>
+
+

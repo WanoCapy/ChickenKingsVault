@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en-us">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -13,7 +13,7 @@
 
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Unity WebGL Player | Granny 2</title>
+    <title>University of Adelaide</title>
     <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/forms-docs-slides-glgl/ngng@main/TemplateData/favicon.ico"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/forms-docs-slides-glgl/ngng@main/TemplateData/styles.css"/>
     <!-- GameMonetize SDK Entegrasyonu -->
@@ -23,7 +23,7 @@
             onEvent: function (a) {
                 switch (a.name) {
                     case "SDK_GAME_PAUSE":
-                        console.log("Oyun duraklatÄ±ldÄ±, ses kapatÄ±lÄ±yor...");
+                        console.log("Oyun duraklatıldı, ses kapatılıyor...");
                         if (typeof myGameInstance !== 'undefined' && myGameInstance) {
                             myGameInstance.SendMessage('AudioManager', 'MuteAudio');
                         }
@@ -35,7 +35,7 @@
                         }
                         break;
                     case "SDK_READY":
-                        console.log("SDK hazÄ±r.");
+                        console.log("SDK hazır.");
                         break;
                 }
             }
@@ -107,9 +107,9 @@
             if (!isAdShown && typeof sdk !== 'undefined' && typeof sdk.showBanner !== 'undefined') {
                 sdk.showBanner();
                 isAdShown = true;
-                console.log("Reklam Ã§aÄŸrÄ±ldÄ±.");
+                console.log("Reklam çağrıldı.");
             } else {
-                console.warn("SDK veya showBanner tanÄ±mlÄ± deÄŸil.");
+                console.warn("SDK veya showBanner tanımlı değil.");
             }
         }
 
@@ -195,7 +195,7 @@
                 }).then((unityInstance) => {
                     myGameInstance = unityInstance;
                     setTimeout(() => { loadingBar.style.display = "none"; }, 500);
-                    // Oyun yÃ¼klendiÄŸinde tÄ±klama olayÄ±nÄ± ekle
+                    // Oyun yüklendiğinde tıklama olayını ekle
                     canvas.addEventListener('pointerdown', showAdOnClick);
                     canvas.addEventListener('touchstart', showAdOnClick);
                 }).catch((message) => {
@@ -209,3 +209,5 @@
     </script>
 </body>
 </html>
+
+

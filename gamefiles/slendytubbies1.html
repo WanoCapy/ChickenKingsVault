@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LM67KGEJRK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LM67KGEJRK');
+</script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>University of Adelaide</title>
+        <style>
+        :root {
+            --bg: #0b0b0d;
+            --surface: #141417;
+            --surface-alt: #1d1d21;
+            --accent: #f5a623;
+            --accent-fg: #000;
+            --text: #e2e2e6;
+            --text-muted: #7a7a82;
+            --border: rgba(255, 255, 255, 0.07);
+            --radius: 10px;
+            --radius-sm: 6px;
+        }
+        html,body { height:100%; margin:0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); }
+        .toolbar { display:flex; gap:.5rem; padding:.5rem; background: rgba(11, 11, 13, 0.88); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); color: var(--text); align-items:center; }
+        button { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text-muted); padding: 5px 13px; font-size: 13px; transition: color 0.12s, border-color 0.12s, background 0.12s; cursor:pointer; line-height: 1; }
+        button:hover { color: var(--text); border-color: rgba(255, 255, 255, 0.18); }
+        button:active { transform:translateY(1px); }
+        .frame-wrapper { height: calc(100% - 56px); background: var(--bg); display:flex; }
+        iframe { border:0; width:100%; height:100%; display:block; }
+    </style>
+</head>
+<body>
+    <div class="toolbar">
+        <span>Slendytubbies 1</span>
+        <button id="homeBtn">Home</button>
+        <div style="flex:1"></div>
+        <button id="fsBtn">Enter fullscreen</button>
+    </div>
+
+    <div class="frame-wrapper" id="frameWrapper">
+        <iframe id="gameFrame" src="Slendytubbies 1.html" allowfullscreen allow="fullscreen"></iframe>
+    </div>
+
+    <script>
+        const fsBtn = document.getElementById('fsBtn');
+        const wrapper = document.getElementById('frameWrapper');
+        const iframe = document.getElementById('gameFrame');
+        const homeBtn = document.getElementById('homeBtn');
+
+        function isFullscreen() {
+            return !!(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement);
+        }
+
+        function requestFull(element) {
+            if (element.requestFullscreen) return element.requestFullscreen();
+            if (element.webkitRequestFullscreen) return element.webkitRequestFullscreen();
+            if (element.mozRequestFullScreen) return element.mozRequestFullScreen();
+            if (element.msRequestFullscreen) return element.msRequestFullscreen();
+        }
+
+        function exitFull() {
+            if (document.exitFullscreen) return document.exitFullscreen();
+            if (document.webkitExitFullscreen) return document.webkitExitFullscreen();
+            if (document.mozCancelFullScreen) return document.mozCancelFullScreen();
+            if (document.msExitFullscreen) return document.msExitFullscreen();
+        }
+
+        fsBtn.addEventListener('click', async () => {
+            try {
+                if (!isFullscreen()) {
+                    // Many browsers don't allow making a cross-origin iframe the fullscreen root,
+                    // so request fullscreen on the wrapper element instead.
+                    await requestFull(wrapper);
+                    fsBtn.textContent = 'Exit fullscreen';
+                } else {
+                    await exitFull();
+                    fsBtn.textContent = 'Enter fullscreen';
+                }
+            } catch (e) {
+                console.error('Fullscreen request failed', e);
+            }
+        });
+
+        // Home button navigates to index.html
+        homeBtn.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        // Update button text if user exits fullscreen via ESC or browser UI
+        document.addEventListener('fullscreenchange', () => {
+            fsBtn.textContent = isFullscreen() ? 'Exit fullscreen' : 'Enter fullscreen';
+        });
+        document.addEventListener('webkitfullscreenchange', () => {
+            fsBtn.textContent = isFullscreen() ? 'Exit fullscreen' : 'Enter fullscreen';
+        });
+        document.addEventListener('mozfullscreenchange', () => {
+            fsBtn.textContent = isFullscreen() ? 'Exit fullscreen' : 'Enter fullscreen';
+        });
+        document.addEventListener('MSFullscreenChange', () => {
+            fsBtn.textContent = isFullscreen() ? 'Exit fullscreen' : 'Enter fullscreen';
+        });
+    </script>
+</body>
+</html>
+
+
+
+

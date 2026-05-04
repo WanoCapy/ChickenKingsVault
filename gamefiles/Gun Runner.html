@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en-us">
 <head>
@@ -16,7 +16,7 @@
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-<title>GunBuild</title>
+<title>University of Adelaide</title>
 <link rel="shortcut icon" href="TemplateData/favicon.ico"/>
 <link rel="stylesheet" href="TemplateData/style.css"/>
 <!-- Yandex Games SDK -->
@@ -523,8 +523,8 @@
                         jsonEntries.isDefault = res.default;
                         jsonEntries.isInvertSortOrder = res.description.invert_sort_order;
                         jsonEntries.decimalOffset = res.description.score_format.options.decimal_offset;
-                        jsonEntries.type = res.description.type; // ÐÐµ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÑ‚ÑÑ Ð½Ð° Ð¼Ð¾Ð¼ÐµÐ½Ñ‚ 18.07.23
-                        //jsonEntries.title = res.title; // Ð ÐµÐ°Ð»Ð¸Ð·ÑƒÐ¹Ñ‚Ðµ Ð¿Ð¾ Ð¿Ñ€ÐµÐ´Ð¿Ð¾Ñ‡Ñ‚ÐµÐ½Ð¸ÑÐ¼
+                        jsonEntries.type = res.description.type; // Не определяется на момент 18.07.23
+                        //jsonEntries.title = res.title; // Реализуйте по предпочтениям
 
                         return leaderboard.getLeaderboardEntries(nameLB, {
                             quantityTop: quantityTop,
@@ -732,3 +732,6 @@ function GetFlags() {
     </script>
 </body>
 </html>
+
+
+

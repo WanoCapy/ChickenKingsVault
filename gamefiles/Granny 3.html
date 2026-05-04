@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en-us">
 <head>
@@ -14,7 +14,7 @@
 
 <meta charset="utf-8"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title>Unity WebGL Player | Granny 3</title>
+<title>University of Adelaide</title>
 <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/ranny31ranny/5471@main/TemplateData/favicon.ico"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ranny31ranny/5471@main/TemplateData/style.css"/>
 <!-- Yandex Games SDK -->
@@ -141,7 +141,7 @@
 
           loadingBar.style.display = "block";
           
-          // myGameInstance global olarak tanÄ±mlanÄ±yor
+          // myGameInstance global olarak tanımlanıyor
           window.myGameInstance = null;
 
           var script = document.createElement("script");
@@ -153,17 +153,19 @@
                     window.myGameInstance = unityInstance; // Global hale getirildi
                     loadingBar.style.display = "none";
                   }).catch((message) => {
-                    console.error("Unity yÃ¼kleme hatasÄ±:", message);
+                    console.error("Unity yükleme hatası:", message);
                     alert(message);
                   });
                 };
 
           document.body.appendChild(script);
       }).catch(error => {
-          console.error("Dosya birleÅŸtirme hatasÄ±:", error);
+          console.error("Dosya birleştirme hatası:", error);
       });
 
 </script>
 
 </body>
 </html>
+
+

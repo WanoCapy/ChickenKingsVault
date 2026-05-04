@@ -1,7 +1,7 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en-us">
-<head>
+<head><title>University of Adelaide</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LM67KGEJRK"></script>
 <script>
@@ -22,16 +22,16 @@
 <!-- Yandex Games SDK -->
 <script src="https://cdn.jsdelivr.net/gh/gn-math/assets@main/yandex-sdk.js?lol"></script>
 <style>
-        /* Ð£Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð²Ñ‹Ð´ÐµÐ»ÐµÐ½Ð¸Ðµ Ð¿Ð¾ Ð½Ð°Ð¶Ð°Ñ‚Ð¸ÑŽ ÐºÐ»Ð°Ð²Ð¸Ñˆ */
+        /* Убираем выделение по нажатию клавиш */
         canvas:focus {
             outline: none;
         }
 
         html, body {
-            /* Ð£Ð±Ð¸Ñ€Ð°ÐµÐ¼ Ð¾Ñ‚ÑÑ‚ÑƒÐ¿Ñ‹ */
+            /* Убираем отступы */
             padding: 0;
             margin: 0;
-            /* ÐžÑ‚ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ ÑÐºÑ€Ð¾Ð»Ð» Ð¸ Ð»Ð¾Ð½Ð³Ñ‚Ð°Ð¿ Ð½Ð° IOS */
+            /* Отключаем скролл и лонгтап на IOS */
             overflow: hidden;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -40,7 +40,7 @@
             -ms-user-select: none;
             user-select: none;
             -webkit-tap-highlight-color: rgba(0,0,0,0);
-            /* Ð¡Ñ‚Ð°Ð²Ð¸Ð¼ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ð½Ð° 100% */
+            /* Ставим высоту на 100% */
             height: 100%;
         }
     </style>
@@ -100,16 +100,16 @@
             
         }
 
-        // Ð¤Ð¾Ð½Ð¾Ð²Ð¾Ðµ Ð¸Ð·Ð¾Ð±Ñ€Ð°Ð¶ÐµÐ½Ð¸Ðµ Ð¿Ñ€Ð¸ Ð·Ð°Ð³Ñ€ÑƒÐ·ÐºÐµ Ð¸Ð³Ñ€Ñ‹. ÐŸÑ€Ð¸ ÑÐ±Ð¾Ñ€ÐºÐµ Ð±Ð¸Ð»Ð´Ð° ÐºÐ¾Ð´ Ð¼ÐµÐ½ÑÐµÑ‚ÑÑ Ð²Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ð½Ð°ÑÑ‚Ñ€Ð¾ÐµÐº Ð¿Ñ€Ð¾ÐµÐºÑ‚Ð°.
+        // Фоновое изображение при загрузке игры. При сборке билда код меняется взависимости от настроек проекта.
         
         canvas.style.background = "url('background.jpg') center / cover";
 
         loadingCover.style.display = "";
 
-        // Ð’Ñ‹ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ð¿Ð¾ÑÐ²Ð»ÐµÐ½Ð¸Ðµ Ð¼ÐµÐ½ÑŽ Ð¿Ñ€Ð¸ Ð¿Ñ€Ð°Ð²Ð¾Ð¼ ÐºÐ»Ð¸ÐºÐµ Ð¼Ñ‹ÑˆÐ¸
+        // Выключаем появление меню при правом клике мыши
         document.addEventListener('contextmenu', event => event.preventDefault());
 
-        // Ð’Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÐ¼ Ñ„Ð¾ÐºÑƒÑ, ÐµÑÐ»Ð¸ ÐºÐ»Ð¸ÐºÐ½ÑƒÐ»Ð¸ Ð¿Ð¾ ÑÐºÑ€Ð°Ð½Ñƒ
+        // Возвращаем фокус, если кликнули по экрану
         function FocusGame() {
             window.focus();
             canvas.focus();
@@ -454,8 +454,8 @@ console.log('Init Player ysdk');
                         jsonEntries.isDefault = res.default;
                         jsonEntries.isInvertSortOrder = res.description.invert_sort_order;
                         jsonEntries.decimalOffset = res.description.score_format.options.decimal_offset;
-                        jsonEntries.type = res.description.type; // ÐÐµ Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»ÑÐµÑ‚ÑÑ Ð½Ð° Ð¼Ð¾Ð¼ÐµÐ½Ñ‚ 18.07.23
-                        //jsonEntries.title = res.title; // Ð ÐµÐ°Ð»Ð¸Ð·ÑƒÐ¹Ñ‚Ðµ Ð¿Ð¾ Ð¿Ñ€ÐµÐ´Ð¿Ð¾Ñ‡Ñ‚ÐµÐ½Ð¸ÑÐ¼
+                        jsonEntries.type = res.description.type; // Не определяется на момент 18.07.23
+                        //jsonEntries.title = res.title; // Реализуйте по предпочтениям
 
                         return leaderboard.getLeaderboardEntries(nameLB, {
                             quantityTop: quantityTop,
@@ -794,3 +794,6 @@ function OpenAuthDialog() {
     </script>
 </body>
 </html>
+
+
+

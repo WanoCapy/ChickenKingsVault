@@ -3318,4 +3318,16 @@ const games =`
 <a class="game-link" href="gamefiles/spaceflightsimulator.html">
     <img src="gameimages/Spaceflight Simulator.png" alt="Spaceflight Simulator Cover">
     <div>Spaceflight Simulator</div>
+</a>
+<a class="game-link" href="gamefiles/slendytubbies1.html">
+    <img src="gameimages/slendytubbies1.png" alt="Slendytubbies 1 Cover">
+    <div>Slendytubbies 1</div>
+</a>
+<a class="game-link" href="gamefiles/slendytubbies2.html">
+    <img src="gameimages/slendytubbies2.png" alt="Slendytubbies 2 Cover">
+    <div>Slendytubbies 2</div>
+</a>
+<a class="game-link" href="gamefiles/slendytubbies2d.html">
+    <img src="gameimages/slendytubbies2d.png" alt="Slendytubbies 2D Cover">
+    <div>Slendytubbies 2D</div>
 </a>`;
