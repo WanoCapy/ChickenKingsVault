@@ -1024,7 +1024,7 @@ const games =`
     <div>Undertale</div>
 </a>
 <a class="game-link" href="gamefiles/battlesimulator.html">
-    <img src="gameimages/battlesimulator.jpg" alt="Battle Simulator Cover">
+    <img src="gameimages/battlesimulator.webp" alt="Battle Simulator Cover">
     <div>Battle Simulator</div>
 </a>
 <a class="game-link" href="gamefiles/timeshooter2.html">
@@ -3316,7 +3316,7 @@ const games =`
     <div>Vampire Survivors</div>
 </a>
 <a class="game-link" href="gamefiles/spaceflightsimulator.html">
-    <img src="gameimages/Spaceflight Simulator.png" alt="Spaceflight Simulator Cover">
+    <img src="gameimages/spaceflightsimulator.png" alt="Spaceflight Simulator Cover">
     <div>Spaceflight Simulator</div>
 </a>
 <a class="game-link" href="gamefiles/slendytubbies1.html">
@@ -3330,4 +3330,24 @@ const games =`
 <a class="game-link" href="gamefiles/slendytubbies2d.html">
     <img src="gameimages/slendytubbies2d.png" alt="Slendytubbies 2D Cover">
     <div>Slendytubbies 2D</div>
+</a>
+<a class="game-link" href="gamefiles/20minutestilldawn.html">
+    <img src="gameimages/20minutestilldawn.png" alt="20 Minutes Till Dawn Cover">
+    <div>20 Minutes Till Dawn</div>
+</a>
+<a class="game-link" href="gamefiles/totallyaccuratebattlesimulator.html">
+    <img src="gameimages/totallyaccuratebattlesimulator.png" alt="Totally Accurate Battle Simulator Cover">
+    <div>Totally Accurate Battle Simulator</div>
+</a>
+<a class="game-link" href="gamefiles/misidegame.html">
+    <img src="gameimages/miside.png" alt="MiSide Cover">
+    <div>MiSide</div>
+</a>
+<a class="game-link" href="gamefiles/yohohoio.html">
+    <img src="gameimages/yohohoio.png" alt="YoHoHo.io Cover">
+    <div>YoHoHo.io</div>
+</a>
+<a class="game-link" href="gamefiles/animalcrossing.html">
+    <img src="gameimages/animalcrossing.png" alt="Animal Crossing Cover">
+    <div>Animal Crossing</div>
 </a>`;
